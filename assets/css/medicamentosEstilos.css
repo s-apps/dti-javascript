@@ -1,0 +1,16 @@
+.medicamentos {
+    margin-top: 10px;
+    padding: 5px 20px;
+    border: solid 1px #ccc;
+}
+
+img {
+    border-radius: 50%;
+}
+
+button{
+    background-color: cadetblue;
+    border: solid 1px #000;
+    color: white;
+    padding: 2px 5px;
+}
