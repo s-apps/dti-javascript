@@ -15,14 +15,14 @@ window.addEventListener('submit', (e) => {
 });
 
 function incluir(){
-    console.log(typeof preco.value)
     if (medicamento.value === '' || preco.value === ''){
         alert('Preencha os campos');
         return;
     }
 
     var novoMedicamento = document.createElement('li');
-    novoMedicamento.textContent = `${medicamento.value} - ${preco.value}`;
+    novoMedicamento.setAttribute('id', 'medicamento' + total);
+    novoMedicamento.innerHTML = `${medicamento.value} - ${preco.value} - <a href="#" onclick="excluir(${total})">Excluir</a>`;
 
     listaDeMedicamentos.appendChild(novoMedicamento);
 
@@ -30,4 +30,10 @@ function incluir(){
     medicamento.value = '';
     preco.value = '';
     medicamento.focus();
+}
+
+function excluir(indice){
+    var medicamento = document.getElementById('medicamento' + indice);
+    medicamento.remove();
+    totalDeMedicamentos.textContent = --total;
 }
